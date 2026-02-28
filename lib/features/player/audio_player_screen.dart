@@ -13,33 +13,16 @@ class AudioPlayerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
       appBar: AppBar(
+        title: Text(title),
         backgroundColor: Colors.black,
-        title: const Text('Now Playing'),
       ),
+      backgroundColor: Colors.black,
       body: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Cover placeholder
-            Container(
-              height: 220,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.grey.shade900,
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: const Icon(
-                Icons.headphones,
-                size: 80,
-                color: Colors.white54,
-              ),
-            ),
-
-            const SizedBox(height: 24),
-
             Text(
               title,
               style: const TextStyle(
@@ -48,33 +31,20 @@ class AudioPlayerScreen extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-
-            const SizedBox(height: 8),
-
+            const SizedBox(height: 12),
             Text(
               description,
-              style: const TextStyle(
-                color: Colors.white70,
-                fontSize: 14,
+              style: const TextStyle(color: Colors.white70),
+            ),
+            const Spacer(),
+            const Center(
+              child: Icon(
+                Icons.play_circle_fill,
+                color: Colors.redAccent,
+                size: 80,
               ),
             ),
-
-            const Spacer(),
-
-            // Player controls
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Icon(Icons.skip_previous, color: Colors.white, size: 40),
-                SizedBox(width: 24),
-                Icon(Icons.play_circle_fill,
-                    color: Colors.redAccent, size: 72),
-                SizedBox(width: 24),
-                Icon(Icons.skip_next, color: Colors.white, size: 40),
-              ],
-            ),
-
-            const SizedBox(height: 40),
+            const SizedBox(height: 24),
           ],
         ),
       ),
