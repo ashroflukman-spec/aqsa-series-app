@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'features/home/home_screen.dart';
+import 'core/lib/features/home/home_screen.dart';
 
 void main() {
   runApp(const AqsaSeriesApp());
