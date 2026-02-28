@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../core/api_service.dart';
 import '../../models/series.dart';
+import '../player/audio_player_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
