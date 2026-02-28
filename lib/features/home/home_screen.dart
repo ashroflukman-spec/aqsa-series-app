@@ -55,14 +55,13 @@ class HomeScreen extends StatelessWidget {
                   ),
                   trailing: Text('${series.totalEpisodes} Bab'),
                   onTap: () {
-                    // Langkah seterusnya: buka Library (senarai bab)
-                  },
-                ),
-              );
-            },
-          );
-        },
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (_) => AudioPlayerScreen(
+        title: series.title,
+        description: series.description,
       ),
-    );
-  }
-}
+    ),
+  );
+},
