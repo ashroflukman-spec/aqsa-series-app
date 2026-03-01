@@ -9,7 +9,7 @@ class AudioPlayerScreen extends StatefulWidget {
 
   const AudioPlayerScreen({
     super.key,
-    required this.title,
+    required this.title, 
     required this.description,
   });
 
