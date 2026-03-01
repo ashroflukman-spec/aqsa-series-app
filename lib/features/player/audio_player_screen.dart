@@ -23,6 +23,26 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
   List<AudioTag> _tags = [];
   bool _loadingTags = true;
 
+  @override
+void initState() {
+  super.initState();
+  _initAudio();
+  _loadTags();
+}
+
+  Future<void> _loadTags() async {
+  final all = await TagStorage.getTags();
+  
+  final filtered =
+      all.where((t) => t.title == widget.title).toList();
+
+  if (!mounted) return;
+setState(() {
+  _tags = filtered;
+  _loadingTags = false;
+});
+}
+
   // ✅ MARKER FUNCTION MESTI DI SINI
   Widget _buildMarkers(Duration total) {
     if (_tags.isEmpty || total.inSeconds == 0) {
